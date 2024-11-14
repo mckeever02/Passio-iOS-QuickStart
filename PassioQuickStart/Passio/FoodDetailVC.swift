@@ -16,7 +16,7 @@ class FoodDetailVC: UIViewController {
     var didFetchData: Bool = false
     
     var food: PassioAdvisorFoodInfo?
-    var foodRecord: PassioFoodItem?
+    var foodItem: PassioFoodItem?
     private var cachedMaxForSlider = [String: Float]()
 
     override func viewDidLoad() {
@@ -39,30 +39,33 @@ class FoodDetailVC: UIViewController {
         
         guard let food = food else { return }
         
-        if let foodDataInfo = food.foodDataInfo {
-            
-            let servingQuantity = foodDataInfo.nutritionPreview?.servingQuantity
-            let servingUnit = foodDataInfo.nutritionPreview?.servingUnit
-            
-            updateLoader(show: true)
-            PassioNutritionAI.shared.fetchFoodItemFor(foodDataInfo: foodDataInfo,
-                                                      servingQuantity: servingQuantity,
-                                                      servingUnit: servingUnit) { passioFoodItem in
-                DispatchQueue.main.async {
-                    self.updateLoader(show: false)
-                    if var foodRecord = passioFoodItem {
-                        self.foodRecord = foodRecord
-                        self.updateUI()
+        if let packagedFoodItem = food.packagedFoodItem {
+            self.foodItem = packagedFoodItem
+            reloadData()
+        }
+        else {
+            if let foodDataInfo = food.foodDataInfo {
+                let servingQuantity = foodDataInfo.nutritionPreview?.servingQuantity
+                let servingUnit = foodDataInfo.nutritionPreview?.servingUnit
+                
+                updateLoader(show: true)
+                PassioNutritionAI.shared.fetchFoodItemFor(foodDataInfo: foodDataInfo,
+                                                          servingQuantity: servingQuantity,
+                                                          servingUnit: servingUnit) { passioFoodItem in
+                    DispatchQueue.main.async {
+                        self.updateLoader(show: false)
+                        if let foodItem = passioFoodItem {
+                            self.foodItem = foodItem
+                            self.reloadData()
+                        }
                     }
                 }
             }
-        } else {
-            updateUI()
         }
     }
     
     @objc func onChangeUnit(sender: UIButton) {
-        guard let servingUnits = foodRecord?.amount.servingUnits else { return }
+        guard let servingUnits = foodItem?.amount.servingUnits else { return }
         let items = servingUnits.map { $0.unitName }
         let dropDown = DropDownVC(nibName: "DropDownVC", bundle: nil)
         dropDown.loadViewIfNeeded()
@@ -94,14 +97,14 @@ class FoodDetailVC: UIViewController {
             sizeOfAtTick = 10
         }
         var newValue = round(Double(sender.value)/sizeOfAtTick) * sizeOfAtTick
-        guard newValue != foodRecord?.amount.selectedQuantity,
-              var tempFoodRecord = foodRecord else {
+        guard newValue != foodItem?.amount.selectedQuantity,
+              var tempFoodItem = foodItem else {
             return
         }
         newValue = newValue == 0 ? sizeOfAtTick/1000 : newValue
-        _ = tempFoodRecord.setSelected(unit: tempFoodRecord.amount.selectedUnit, quantity: newValue)
-        foodRecord = tempFoodRecord
-        updateUI()
+        _ = tempFoodItem.setSelectedQuantity(newValue)
+        foodItem = tempFoodItem
+        reloadData()
     }
 
     func getAmount(slider: UISlider) -> (quantity: Double, unitName: String, weight: String) {
@@ -109,17 +112,17 @@ class FoodDetailVC: UIViewController {
         slider.minimumValue = 0.0
         slider.tag = 0
         
-        guard let foodRecord = foodRecord else { return(100, UnitsTexts.cGrams, "100") }
+        guard let foodItem = self.foodItem else { return(100, UnitsTexts.cGrams, "100") }
         
         let sliderMultiplier: Float = 5.0
         let maxSliderFromData = Float(1) * sliderMultiplier
-        let currentValue = Float(foodRecord.amount.selectedQuantity)
+        let currentValue = Float(foodItem.amount.selectedQuantity)
         
-        if cachedMaxForSlider[foodRecord.amount.selectedUnit] == nil {
-            cachedMaxForSlider = [foodRecord.amount.selectedUnit: sliderMultiplier * currentValue]
+        if cachedMaxForSlider[foodItem.amount.selectedUnit] == nil {
+            cachedMaxForSlider = [foodItem.amount.selectedUnit: sliderMultiplier * currentValue]
             slider.maximumValue = sliderMultiplier * currentValue
         }
-        else if let maxFromCache = cachedMaxForSlider[foodRecord.amount.selectedUnit],
+        else if let maxFromCache = cachedMaxForSlider[foodItem.amount.selectedUnit],
                 maxFromCache > maxSliderFromData, maxFromCache > currentValue {
             slider.maximumValue = maxFromCache
         }
@@ -128,42 +131,18 @@ class FoodDetailVC: UIViewController {
         }
         else {
             slider.maximumValue = currentValue
-            cachedMaxForSlider = [foodRecord.amount.selectedUnit: currentValue]
+            cachedMaxForSlider = [foodItem.amount.selectedUnit: currentValue]
         }
         slider.value = currentValue
                 
         return (Double(currentValue),
-                foodRecord.amount.selectedUnit.capitalizingFirst(),
-                String(foodRecord.amount.weight().value.oneDigit))
+                foodItem.amount.selectedUnit.capitalizingFirst(),
+                String(foodItem.amount.weight().value.oneDigit))
     }
     
-    func updateUI() {
+    func reloadData() {
         didFetchData = true
         tableView.reloadData()
-        
-        let code = "eyJsYWJlbGlkIjoiMjA3NGEwYjEtOWE2My0xMWVjLTk4Y2UtNzI2M2JhODlhNWI1IiwidHlwZSI6InJlY2lwZSIsInJlc3VsdGlkIjoiNzkxMzFhN2MtOWIzNy0xMWVjLWFhYzktYWE5MGU5YzQ3MzQ1IiwibWV0YWRhdGEiOm51bGx9"
-        //let code = "eyJsYWJlbGlkIjoiNzdiNTFlMzQtODk1MS0xMWVhLWE4OTMtMGY5MjlmM2E0NWRhIiwidHlwZSI6InN5bm9ueW0iLCJyZXN1bHRpZCI6IjE2Mjg2MDY3MzUyODEiLCJtZXRhZGF0YSI6bnVsbH0="
-        PassioNutritionAI.shared.fetchFoodItemFor(refCode: code) { passioFoodItem in
-            
-            if var foodItem = passioFoodItem {
-                
-                print("Quantity: \(foodItem.amount.selectedQuantity)")
-                print("Unit: \(foodItem.amount.selectedUnit)")
-                
-                var calories = foodItem.nutrientsSelectedSize().calories()
-                print("Calories: \(calories)")
-                
-                foodItem.setSelectedQuantity(2)
-                calories = foodItem.nutrientsSelectedSize().calories()
-                print("Calories: \(calories)")
-                
-                foodItem.setSelectedQuantity(4)
-                calories = foodItem.nutrientsSelectedSize().calories()
-                print("Calories: \(calories)")
-                
-                print("---------------------------")
-            }
-        }
     }
 }
 
@@ -178,9 +157,9 @@ extension FoodDetailVC: UITableViewDataSource, UITableViewDelegate
         switch indexPath.row
         {
         case 0: 
-            guard let foodRecord = self.foodRecord else { return UITableViewCell() }
+            guard let foodItem = self.foodItem else { return UITableViewCell() }
             let cell = tableView.dequeue(FoodNutrientsCell.self, for: indexPath)
-            cell.setup(foodRecord: foodRecord)
+            cell.setup(foodItem: foodItem)
             return cell
             
         case 1:
@@ -210,14 +189,14 @@ extension FoodDetailVC: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let quantity = Double(textField.replaceCommaWithDot) else { return }
-        foodRecord?.setSelectedQuantity(quantity)
-        updateUI()
+        self.foodItem?.setSelectedQuantity(quantity)
+        reloadData()
     }
 }
 
 extension FoodDetailVC: DropDownDelegate {
     func onPickerSelection(value: String, selectedIndex: Int) {
-        foodRecord?.setSelectedUnit(value)
-        updateUI()
+        self.foodItem?.setSelectedUnit(value)
+        reloadData()
     }
 }

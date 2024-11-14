@@ -8,6 +8,12 @@
 import UIKit
 
 extension UITextField {
+    
+    var replaceCommaWithDot: String {
+        let matchedComma = [",", "，", "、", "٬", "٫"].first(where: { (text ?? "").contains($0) }) ?? ""
+        return text?.replacingOccurrences(of: matchedComma, with: ".") ?? ""
+    }
+    
     func addDoneCancelToolbar(onDone: (target: Any, action: Selector)? = nil, onCancel: (target: Any, action: Selector)? = nil) {
         let onCancel = onCancel ?? (target: self, action: #selector(cancelButtonTapped))
         let onDone = onDone ?? (target: self, action: #selector(doneButtonTapped))

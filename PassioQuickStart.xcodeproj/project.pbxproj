@@ -9,21 +9,97 @@
 /* Begin PBXBuildFile section */
 		B8590AEB2CC6445400D49AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8590AEA2CC6445400D49AE2 /* AppDelegate.swift */; };
 		B8590AED2CC6445400D49AE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8590AEC2CC6445400D49AE2 /* SceneDelegate.swift */; };
-		B8590AEF2CC6445400D49AE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8590AEE2CC6445400D49AE2 /* ViewController.swift */; };
-		B8590AF22CC6445400D49AE2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B8590AF12CC6445400D49AE2 /* Base */; };
 		B8590AF42CC6445800D49AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8590AF32CC6445800D49AE2 /* Assets.xcassets */; };
 		B8590AF72CC6445800D49AE2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B8590AF62CC6445800D49AE2 /* Base */; };
+		B8A51DB72CE5E51D008B8D2B /* PassioNutritionAISDK in Frameworks */ = {isa = PBXBuildFile; productRef = B8A51DB62CE5E51D008B8D2B /* PassioNutritionAISDK */; };
+		B8C52CF82CD2464D00B19F45 /* FoodListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CE42CD2464D00B19F45 /* FoodListCell.swift */; };
+		B8C52CF92CD2464D00B19F45 /* FoodListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C52CE52CD2464D00B19F45 /* FoodListCell.xib */; };
+		B8C52CFA2CD2464D00B19F45 /* FoodNutrientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CE62CD2464D00B19F45 /* FoodNutrientsCell.swift */; };
+		B8C52CFB2CD2464D00B19F45 /* FoodNutrientsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C52CE72CD2464D00B19F45 /* FoodNutrientsCell.xib */; };
+		B8C52CFC2CD2464D00B19F45 /* ServingSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CE82CD2464D00B19F45 /* ServingSizeCell.swift */; };
+		B8C52CFD2CD2464D00B19F45 /* ServingSizeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C52CE92CD2464D00B19F45 /* ServingSizeCell.xib */; };
+		B8C52CFE2CD2464D00B19F45 /* DonutChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CEB2CD2464D00B19F45 /* DonutChartView.swift */; };
+		B8C52CFF2CD2464D00B19F45 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CEC2CD2464D00B19F45 /* Double+Extension.swift */; };
+		B8C52D002CD2464D00B19F45 /* QSImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CED2CD2464D00B19F45 /* QSImagePicker.swift */; };
+		B8C52D012CD2464D00B19F45 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CEE2CD2464D00B19F45 /* UIImageView+Extension.swift */; };
+		B8C52D022CD2464D00B19F45 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CEF2CD2464D00B19F45 /* UITableView+Extension.swift */; };
+		B8C52D032CD2464D00B19F45 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CF02CD2464D00B19F45 /* UITextField+Extension.swift */; };
+		B8C52D042CD2464D00B19F45 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CF12CD2464D00B19F45 /* UIView+Extension.swift */; };
+		B8C52D052CD2464D00B19F45 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CF32CD2464D00B19F45 /* DropDownCell.swift */; };
+		B8C52D062CD2464D00B19F45 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C52CF42CD2464D00B19F45 /* DropDownCell.xib */; };
+		B8C52D072CD2464D00B19F45 /* DropDownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52CF52CD2464D00B19F45 /* DropDownVC.swift */; };
+		B8C52D082CD2464D00B19F45 /* DropDownVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C52CF62CD2464D00B19F45 /* DropDownVC.xib */; };
+		B8C52D0F2CD2467A00B19F45 /* ImageSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52D0B2CD2467A00B19F45 /* ImageSelectionVC.swift */; };
+		B8C52D102CD2467A00B19F45 /* FoodDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52D0C2CD2467A00B19F45 /* FoodDetailVC.swift */; };
+		B8C52D112CD2467A00B19F45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D0D2CD2467A00B19F45 /* Main.storyboard */; };
+		B8C52D122CD2467A00B19F45 /* RecognizeImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52D0E2CD2467A00B19F45 /* RecognizeImageVC.swift */; };
+		B8C52D142CD248E100B19F45 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52D132CD248E100B19F45 /* Constants.swift */; };
+		B8C52D162CD249C500B19F45 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D152CD249C500B19F45 /* Colors.xcassets */; };
+		B8C52D192CD24CFC00B19F45 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C52D182CD24CFC00B19F45 /* String+Extension.swift */; };
+		B8C52D532CD2757900B19F45 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D492CD2757900B19F45 /* Inter-Black.ttf */; };
+		B8C52D542CD2757900B19F45 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D4A2CD2757900B19F45 /* Inter-Bold.ttf */; };
+		B8C52D552CD2757900B19F45 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D4B2CD2757900B19F45 /* Inter-ExtraBold.ttf */; };
+		B8C52D562CD2757900B19F45 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D4C2CD2757900B19F45 /* Inter-ExtraLight.ttf */; };
+		B8C52D572CD2757900B19F45 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D4D2CD2757900B19F45 /* Inter-Light.ttf */; };
+		B8C52D582CD2757900B19F45 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D4E2CD2757900B19F45 /* Inter-Medium.ttf */; };
+		B8C52D592CD2757900B19F45 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D4F2CD2757900B19F45 /* Inter-Regular.ttf */; };
+		B8C52D5A2CD2757900B19F45 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D502CD2757900B19F45 /* Inter-SemiBold.ttf */; };
+		B8C52D5B2CD2757900B19F45 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8C52D512CD2757900B19F45 /* Inter-Thin.ttf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B8C52D262CD2672B00B19F45 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B8590AE72CC6445400D49AE2 /* PassioQuickStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassioQuickStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8590AEA2CC6445400D49AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8590AEC2CC6445400D49AE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B8590AEE2CC6445400D49AE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B8590AF12CC6445400D49AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8590AF32CC6445800D49AE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8590AF62CC6445800D49AE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8590AF82CC6445800D49AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8C52CE42CD2464D00B19F45 /* FoodListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodListCell.swift; sourceTree = "<group>"; };
+		B8C52CE52CD2464D00B19F45 /* FoodListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodListCell.xib; sourceTree = "<group>"; };
+		B8C52CE62CD2464D00B19F45 /* FoodNutrientsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodNutrientsCell.swift; sourceTree = "<group>"; };
+		B8C52CE72CD2464D00B19F45 /* FoodNutrientsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodNutrientsCell.xib; sourceTree = "<group>"; };
+		B8C52CE82CD2464D00B19F45 /* ServingSizeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServingSizeCell.swift; sourceTree = "<group>"; };
+		B8C52CE92CD2464D00B19F45 /* ServingSizeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServingSizeCell.xib; sourceTree = "<group>"; };
+		B8C52CEB2CD2464D00B19F45 /* DonutChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutChartView.swift; sourceTree = "<group>"; };
+		B8C52CEC2CD2464D00B19F45 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		B8C52CED2CD2464D00B19F45 /* QSImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSImagePicker.swift; sourceTree = "<group>"; };
+		B8C52CEE2CD2464D00B19F45 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		B8C52CEF2CD2464D00B19F45 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		B8C52CF02CD2464D00B19F45 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		B8C52CF12CD2464D00B19F45 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B8C52CF32CD2464D00B19F45 /* DropDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
+		B8C52CF42CD2464D00B19F45 /* DropDownCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
+		B8C52CF52CD2464D00B19F45 /* DropDownVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownVC.swift; sourceTree = "<group>"; };
+		B8C52CF62CD2464D00B19F45 /* DropDownVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownVC.xib; sourceTree = "<group>"; };
+		B8C52D0B2CD2467A00B19F45 /* ImageSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectionVC.swift; sourceTree = "<group>"; };
+		B8C52D0C2CD2467A00B19F45 /* FoodDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailVC.swift; sourceTree = "<group>"; };
+		B8C52D0D2CD2467A00B19F45 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B8C52D0E2CD2467A00B19F45 /* RecognizeImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeImageVC.swift; sourceTree = "<group>"; };
+		B8C52D132CD248E100B19F45 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B8C52D152CD249C500B19F45 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B8C52D182CD24CFC00B19F45 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B8C52D492CD2757900B19F45 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		B8C52D4A2CD2757900B19F45 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		B8C52D4B2CD2757900B19F45 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B8C52D4C2CD2757900B19F45 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		B8C52D4D2CD2757900B19F45 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		B8C52D4E2CD2757900B19F45 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		B8C52D4F2CD2757900B19F45 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		B8C52D502CD2757900B19F45 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		B8C52D512CD2757900B19F45 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A51DB72CE5E51D008B8D2B /* PassioNutritionAISDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +133,86 @@
 		B8590AE92CC6445400D49AE2 /* PassioQuickStart */ = {
 			isa = PBXGroup;
 			children = (
+				B8C52D522CD2757900B19F45 /* Font */,
+				B8C52CF22CD2464D00B19F45 /* Utility */,
+				B8C52CEA2CD2464D00B19F45 /* Cell */,
+				B8C52CF72CD2464D00B19F45 /* Dropdown */,
+				B8C52D172CD24BA200B19F45 /* Passio */,
+				B8C52D0D2CD2467A00B19F45 /* Main.storyboard */,
 				B8590AEA2CC6445400D49AE2 /* AppDelegate.swift */,
 				B8590AEC2CC6445400D49AE2 /* SceneDelegate.swift */,
-				B8590AEE2CC6445400D49AE2 /* ViewController.swift */,
-				B8590AF02CC6445400D49AE2 /* Main.storyboard */,
 				B8590AF32CC6445800D49AE2 /* Assets.xcassets */,
+				B8C52D152CD249C500B19F45 /* Colors.xcassets */,
 				B8590AF52CC6445800D49AE2 /* LaunchScreen.storyboard */,
 				B8590AF82CC6445800D49AE2 /* Info.plist */,
 			);
 			path = PassioQuickStart;
+			sourceTree = "<group>";
+		};
+		B8C52CEA2CD2464D00B19F45 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B8C52CE42CD2464D00B19F45 /* FoodListCell.swift */,
+				B8C52CE52CD2464D00B19F45 /* FoodListCell.xib */,
+				B8C52CE62CD2464D00B19F45 /* FoodNutrientsCell.swift */,
+				B8C52CE72CD2464D00B19F45 /* FoodNutrientsCell.xib */,
+				B8C52CE82CD2464D00B19F45 /* ServingSizeCell.swift */,
+				B8C52CE92CD2464D00B19F45 /* ServingSizeCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B8C52CF22CD2464D00B19F45 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B8C52D132CD248E100B19F45 /* Constants.swift */,
+				B8C52CEB2CD2464D00B19F45 /* DonutChartView.swift */,
+				B8C52CEC2CD2464D00B19F45 /* Double+Extension.swift */,
+				B8C52CED2CD2464D00B19F45 /* QSImagePicker.swift */,
+				B8C52CEE2CD2464D00B19F45 /* UIImageView+Extension.swift */,
+				B8C52CEF2CD2464D00B19F45 /* UITableView+Extension.swift */,
+				B8C52CF02CD2464D00B19F45 /* UITextField+Extension.swift */,
+				B8C52CF12CD2464D00B19F45 /* UIView+Extension.swift */,
+				B8C52D182CD24CFC00B19F45 /* String+Extension.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		B8C52CF72CD2464D00B19F45 /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				B8C52CF32CD2464D00B19F45 /* DropDownCell.swift */,
+				B8C52CF42CD2464D00B19F45 /* DropDownCell.xib */,
+				B8C52CF52CD2464D00B19F45 /* DropDownVC.swift */,
+				B8C52CF62CD2464D00B19F45 /* DropDownVC.xib */,
+			);
+			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		B8C52D172CD24BA200B19F45 /* Passio */ = {
+			isa = PBXGroup;
+			children = (
+				B8C52D0B2CD2467A00B19F45 /* ImageSelectionVC.swift */,
+				B8C52D0E2CD2467A00B19F45 /* RecognizeImageVC.swift */,
+				B8C52D0C2CD2467A00B19F45 /* FoodDetailVC.swift */,
+			);
+			path = Passio;
+			sourceTree = "<group>";
+		};
+		B8C52D522CD2757900B19F45 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				B8C52D492CD2757900B19F45 /* Inter-Black.ttf */,
+				B8C52D4A2CD2757900B19F45 /* Inter-Bold.ttf */,
+				B8C52D4B2CD2757900B19F45 /* Inter-ExtraBold.ttf */,
+				B8C52D4C2CD2757900B19F45 /* Inter-ExtraLight.ttf */,
+				B8C52D4D2CD2757900B19F45 /* Inter-Light.ttf */,
+				B8C52D4E2CD2757900B19F45 /* Inter-Medium.ttf */,
+				B8C52D4F2CD2757900B19F45 /* Inter-Regular.ttf */,
+				B8C52D502CD2757900B19F45 /* Inter-SemiBold.ttf */,
+				B8C52D512CD2757900B19F45 /* Inter-Thin.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,12 +225,16 @@
 				B8590AE32CC6445400D49AE2 /* Sources */,
 				B8590AE42CC6445400D49AE2 /* Frameworks */,
 				B8590AE52CC6445400D49AE2 /* Resources */,
+				B8C52D262CD2672B00B19F45 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PassioQuickStart;
+			packageProductDependencies = (
+				B8A51DB62CE5E51D008B8D2B /* PassioNutritionAISDK */,
+			);
 			productName = PassioQuickStart;
 			productReference = B8590AE72CC6445400D49AE2 /* PassioQuickStart.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +263,9 @@
 				Base,
 			);
 			mainGroup = B8590ADE2CC6445400D49AE2;
+			packageReferences = (
+				B8A51DB52CE5E51D008B8D2B /* XCRemoteSwiftPackageReference "Passio-Nutrition-AI-iOS-SDK-Distribution" */,
+			);
 			productRefGroup = B8590AE82CC6445400D49AE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +280,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8C52D5A2CD2757900B19F45 /* Inter-SemiBold.ttf in Resources */,
+				B8C52D162CD249C500B19F45 /* Colors.xcassets in Resources */,
+				B8C52D5B2CD2757900B19F45 /* Inter-Thin.ttf in Resources */,
 				B8590AF42CC6445800D49AE2 /* Assets.xcassets in Resources */,
+				B8C52D542CD2757900B19F45 /* Inter-Bold.ttf in Resources */,
+				B8C52CF92CD2464D00B19F45 /* FoodListCell.xib in Resources */,
+				B8C52D562CD2757900B19F45 /* Inter-ExtraLight.ttf in Resources */,
 				B8590AF72CC6445800D49AE2 /* Base in Resources */,
-				B8590AF22CC6445400D49AE2 /* Base in Resources */,
+				B8C52D572CD2757900B19F45 /* Inter-Light.ttf in Resources */,
+				B8C52D062CD2464D00B19F45 /* DropDownCell.xib in Resources */,
+				B8C52D582CD2757900B19F45 /* Inter-Medium.ttf in Resources */,
+				B8C52D082CD2464D00B19F45 /* DropDownVC.xib in Resources */,
+				B8C52CFB2CD2464D00B19F45 /* FoodNutrientsCell.xib in Resources */,
+				B8C52D532CD2757900B19F45 /* Inter-Black.ttf in Resources */,
+				B8C52CFD2CD2464D00B19F45 /* ServingSizeCell.xib in Resources */,
+				B8C52D112CD2467A00B19F45 /* Main.storyboard in Resources */,
+				B8C52D592CD2757900B19F45 /* Inter-Regular.ttf in Resources */,
+				B8C52D552CD2757900B19F45 /* Inter-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +308,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8590AEF2CC6445400D49AE2 /* ViewController.swift in Sources */,
+				B8C52D0F2CD2467A00B19F45 /* ImageSelectionVC.swift in Sources */,
+				B8C52D102CD2467A00B19F45 /* FoodDetailVC.swift in Sources */,
+				B8C52D042CD2464D00B19F45 /* UIView+Extension.swift in Sources */,
+				B8C52D192CD24CFC00B19F45 /* String+Extension.swift in Sources */,
 				B8590AEB2CC6445400D49AE2 /* AppDelegate.swift in Sources */,
+				B8C52CFF2CD2464D00B19F45 /* Double+Extension.swift in Sources */,
 				B8590AED2CC6445400D49AE2 /* SceneDelegate.swift in Sources */,
+				B8C52D002CD2464D00B19F45 /* QSImagePicker.swift in Sources */,
+				B8C52CFE2CD2464D00B19F45 /* DonutChartView.swift in Sources */,
+				B8C52D122CD2467A00B19F45 /* RecognizeImageVC.swift in Sources */,
+				B8C52D052CD2464D00B19F45 /* DropDownCell.swift in Sources */,
+				B8C52CFA2CD2464D00B19F45 /* FoodNutrientsCell.swift in Sources */,
+				B8C52CFC2CD2464D00B19F45 /* ServingSizeCell.swift in Sources */,
+				B8C52D072CD2464D00B19F45 /* DropDownVC.swift in Sources */,
+				B8C52D022CD2464D00B19F45 /* UITableView+Extension.swift in Sources */,
+				B8C52D032CD2464D00B19F45 /* UITextField+Extension.swift in Sources */,
+				B8C52D012CD2464D00B19F45 /* UIImageView+Extension.swift in Sources */,
+				B8C52CF82CD2464D00B19F45 /* FoodListCell.swift in Sources */,
+				B8C52D142CD248E100B19F45 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B8590AF02CC6445400D49AE2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B8590AF12CC6445400D49AE2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B8590AF52CC6445800D49AE2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -300,6 +478,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +507,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +543,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8A51DB52CE5E51D008B8D2B /* XCRemoteSwiftPackageReference "Passio-Nutrition-AI-iOS-SDK-Distribution" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Passiolife/Passio-Nutrition-AI-iOS-SDK-Distribution";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8A51DB62CE5E51D008B8D2B /* PassioNutritionAISDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8A51DB52CE5E51D008B8D2B /* XCRemoteSwiftPackageReference "Passio-Nutrition-AI-iOS-SDK-Distribution" */;
+			productName = PassioNutritionAISDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B8590ADF2CC6445400D49AE2 /* Project object */;
 }

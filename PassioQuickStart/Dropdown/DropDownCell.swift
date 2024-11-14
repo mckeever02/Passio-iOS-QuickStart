@@ -17,6 +17,6 @@ final class DropDownCell: UITableViewCell {
         pickerName.text = disableCapatlized ? title : title == "ml" ? title : title.capitalized
         pickerImageView.image = element.image
         pickerImageView.isHidden = element.image == nil
-        pickerImageView.tintColor = .primaryColor
+        pickerImageView.tintColor = .indigo600
     }
 }

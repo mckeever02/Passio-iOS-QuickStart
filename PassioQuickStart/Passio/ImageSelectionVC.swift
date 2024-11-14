@@ -72,7 +72,7 @@ class ImageSelectionVC: UIViewController
     }
     
     func navigateToImageRecogniser(image: UIImage) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: PassioInternalConnector.shared.bundleForModule)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let recognizeImageVC = storyBoard.instantiateViewController(withIdentifier: "RecognizeImageVC") as! RecognizeImageVC
         recognizeImageVC.selectedImage = image
         self.navigationController?.pushViewController(recognizeImageVC, animated: true)
@@ -100,8 +100,7 @@ class ImageSelectionVC: UIViewController
         DispatchQueue.main.async {
             switch status.mode {
             case .isReadyForDetection:
-                //self.askForCapturePermission()
-                self.statusView.isHidden = true // TEMP
+                self.askForCapturePermission()
             case .isBeingConfigured:
                 self.statusLabel.text = "Configuraing SDK..."
             case .failedToConfigure:
@@ -209,7 +208,6 @@ extension ImageSelectionVC: AVCapturePhotoCaptureDelegate {
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        #warning("We can stop running session here...")
         guard let imageData = photo.fileDataRepresentation() else { return }
         guard let image = UIImage(data: imageData) else { return }
         navigateToImageRecogniser(image: image)

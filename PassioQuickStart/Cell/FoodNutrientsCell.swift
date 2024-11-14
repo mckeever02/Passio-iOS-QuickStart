@@ -32,13 +32,13 @@ class FoodNutrientsCell: UITableViewCell {
                                   shadowOpacity: 1)
     }
 
-    func setup(foodRecord: PassioFoodItem) {
+    func setup(foodItem: PassioFoodItem) {
 
         // 1. Name & short name
-        labelName.text = foodRecord.name
-        labelShortName.text = foodRecord.details
+        labelName.text = foodItem.name
+        labelShortName.text = foodItem.details
 
-        let entityType: PassioIDEntityType = foodRecord.ingredients.count > 1 ? .recipe : .item
+        let entityType: PassioIDEntityType = foodItem.ingredients.count > 1 ? .recipe : .item
         
         if labelName.text?.lowercased() == self.labelShortName.text?.lowercased()
             || entityType == .recipe {
@@ -48,19 +48,12 @@ class FoodNutrientsCell: UITableViewCell {
         }
 
         // 2. Food image
-        imageFood.setFoodImage(id: foodRecord.iconId,
-                               passioID: foodRecord.iconId,
-                               entityType: entityType,
-                               connector: PassioInternalConnector.shared) { [weak self] foodImage in
-            DispatchQueue.main.async {
-                self?.imageFood.image = foodImage
-            }
-        }
+        imageFood.loadIcon(id: foodItem.iconId)
 
-        let calories = foodRecord.nutrientsSelectedSize().calories()?.value ?? 0
-        let carbs = foodRecord.nutrientsSelectedSize().carbs()?.value ?? 0
-        let protein = foodRecord.nutrientsSelectedSize().protein()?.value ?? 0
-        let fat = foodRecord.nutrientsSelectedSize().fat()?.value ?? 0
+        let calories = foodItem.nutrientsSelectedSize().calories()?.value ?? 0
+        let carbs = foodItem.nutrientsSelectedSize().carbs()?.value ?? 0
+        let protein = foodItem.nutrientsSelectedSize().protein()?.value ?? 0
+        let fat = foodItem.nutrientsSelectedSize().fat()?.value ?? 0
         
         // 3. Chart
         let percents = macronutrientPercentages(carbsG: carbs,

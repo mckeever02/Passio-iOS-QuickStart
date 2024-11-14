@@ -28,7 +28,7 @@
         <!--Image SelectionVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ImageSelectionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ImageSelectionVC" customModule="PassioNutritionUIModule" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageSelectionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ImageSelectionVC" customModule="PassioQuickStart" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +123,7 @@
         <!--Recognize ImageVC-->
         <scene sceneID="ip9-Cx-QgJ">
             <objects>
-                <viewController storyboardIdentifier="RecognizeImageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CMn-6A-u6p" customClass="RecognizeImageVC" customModule="PassioNutritionUIModule" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecognizeImageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CMn-6A-u6p" customClass="RecognizeImageVC" customModule="PassioQuickStart" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4IT-UG-xMT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,7 +194,7 @@
         <!--Food DetailVC-->
         <scene sceneID="C2F-Iy-3tY">
             <objects>
-                <viewController storyboardIdentifier="FoodDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AqD-jb-km4" customClass="FoodDetailVC" customModule="PassioNutritionUIModule" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FoodDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AqD-jb-km4" customClass="FoodDetailVC" customModule="PassioQuickStart" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rfe-y1-GB9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

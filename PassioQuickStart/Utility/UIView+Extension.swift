@@ -20,6 +20,38 @@ extension UIView {
         }
     }
     
+    @IBInspectable var vwCornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
+    @IBInspectable var vwBorderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    @IBInspectable var vwBorderColor: UIColor? {
+        get {
+            guard let borderColor = layer.borderColor else {
+                return nil
+            }
+            return UIColor(cgColor: borderColor)
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+
+    
     func roundCorner() {
         let radius = min(self.bounds.height, self.bounds.width)/2
         self.layer.cornerRadius = radius

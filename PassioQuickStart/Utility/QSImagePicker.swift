@@ -1,5 +1,5 @@
 //
-//  ImagePicker.swift
+//  QSImagePicker.swift
 //  PassioQuickStart
 //
 //  Created by Pratik on 21/10/24.
@@ -23,6 +23,7 @@ class QSImagePicker: NSObject
     }
     
     func present(on viewController: UIViewController) {
+        
         PHPhotoLibrary.requestAuthorization() { status in
             DispatchQueue.main.async {
                 if status == .authorized {
@@ -78,7 +79,8 @@ class QSImagePicker: NSObject
 
 extension QSImagePicker: PHPickerViewControllerDelegate {
     
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+    func picker(_ picker: PHPickerViewController, 
+                didFinishPicking results: [PHPickerResult]) {
         
         picker.dismiss(animated: true) { [weak self] in
             
