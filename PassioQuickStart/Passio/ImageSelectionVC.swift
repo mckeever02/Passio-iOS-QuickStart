@@ -9,7 +9,7 @@ import UIKit
 import PassioNutritionAISDK
 import AVFoundation
 
-let PASSIO_DEV_KEY = "jNF7sKOufr1K0vYBNe7HShIgmv4dkJCYuvvro7pW"
+let PASSIO_DEV_KEY = "YOUR_PASSIO_KEY"
 
 class ImageSelectionVC: UIViewController
 {
