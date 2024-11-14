@@ -102,7 +102,7 @@ class FoodDetailVC: UIViewController {
             return
         }
         newValue = newValue == 0 ? sizeOfAtTick/1000 : newValue
-        _ = tempFoodItem.setSelectedQuantity(newValue)
+        tempFoodItem.setSelectedQuantity(newValue)
         foodItem = tempFoodItem
         reloadData()
     }
