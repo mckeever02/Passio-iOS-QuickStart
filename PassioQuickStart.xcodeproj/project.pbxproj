@@ -119,7 +119,6 @@
 		B8590ADE2CC6445400D49AE2 = {
 			isa = PBXGroup;
 			children = (
-				3B5242EB2CF6C56C006596E2 /* Config.swift */,
 				B8590AE92CC6445400D49AE2 /* PassioQuickStart */,
 				B8590AE82CC6445400D49AE2 /* Products */,
 			);
@@ -136,6 +135,7 @@
 		B8590AE92CC6445400D49AE2 /* PassioQuickStart */ = {
 			isa = PBXGroup;
 			children = (
+				3B5242EB2CF6C56C006596E2 /* Config.swift */,
 				B8C52D522CD2757900B19F45 /* Font */,
 				B8C52CF22CD2464D00B19F45 /* Utility */,
 				B8C52CEA2CD2464D00B19F45 /* Cell */,

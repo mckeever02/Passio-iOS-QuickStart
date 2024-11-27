@@ -16,7 +16,7 @@ class ImageSelectionVC: UIViewController
 
     @IBOutlet weak var captureView: UIView!
     @IBOutlet weak var captureButton: UIButton!
-    @IBOutlet weak var gallaryButton: UIButton!
+    @IBOutlet weak var galleryButton: UIButton!
 
     private let passioSDK = PassioNutritionAI.shared
     private var passioConfig = PassioConfiguration(key: Config.PASSIO_KEY)
@@ -38,7 +38,7 @@ class ImageSelectionVC: UIViewController
     
     func basicSetup() {
         captureButton.layer.cornerRadius = 5
-        gallaryButton.layer.cornerRadius = 5
+        galleryButton.layer.cornerRadius = 5
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,8 +65,8 @@ class ImageSelectionVC: UIViewController
         captureImage()
     }
     
-    @IBAction func gallaryButtonTapped(_ sender: UIButton) {
-        openGallary()
+    @IBAction func galleryButtonTapped(_ sender: UIButton) {
+        openGallery()
     }
     
     func navigateToImageRecogniser(image: UIImage) {
@@ -214,7 +214,7 @@ extension ImageSelectionVC: AVCapturePhotoCaptureDelegate {
 
 extension ImageSelectionVC: QSImagePickerDelegate {
     
-    func openGallary() {
+    func openGallery() {
         imagePicker.delegate = self
         imagePicker.present(on: self)
     }
