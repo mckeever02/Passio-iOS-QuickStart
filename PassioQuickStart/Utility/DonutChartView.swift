@@ -39,8 +39,9 @@ class DonutChartView: UIView {
     
     func updateData(data: [ChartDatasource]) {
         
+        let fraction = 0.23 
         progressLayers.forEach { $0.removeFromSuperlayer() }
-        let padding = CGFloat(data.filter({$0.percent > 0}).count) * 0.17
+        let padding = CGFloat(data.filter({$0.percent > 0}).count) * fraction
         let totalRotationAngle = (CGFloat.pi * 2) - padding
         var startAngle = CGFloat.zero
         
@@ -68,7 +69,7 @@ class DonutChartView: UIView {
                 self.progressLayers.append(layer)
                 self.layer.addSublayer(layer)
                 
-                startAngle += progressAngle + 0.17
+                startAngle += progressAngle + fraction
             }
         }
     }

@@ -102,7 +102,8 @@ class ImageSelectionVC: UIViewController
             case .isBeingConfigured:
                 self.statusLabel.text = "Configuraing SDK..."
             case .failedToConfigure:
-                self.statusLabel.text = "SDK failed to configure!"
+                let message = status.error?.errorDescription ?? ""
+                self.statusLabel.text = "SDK failed to configure \n \'\(message)\'"
             case .isDownloadingModels:
                 self.statusLabel.text = "SDK is downloading files..."
             case .notReady:

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B5242EC2CF6C56C006596E2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5242EB2CF6C56C006596E2 /* Config.swift */; };
+		B843E46D2CF74EAB006AD05A /* Config.example.swift in Sources */ = {isa = PBXBuildFile; fileRef = B843E46C2CF74EAB006AD05A /* Config.example.swift */; };
 		B8590AEB2CC6445400D49AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8590AEA2CC6445400D49AE2 /* AppDelegate.swift */; };
 		B8590AED2CC6445400D49AE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8590AEC2CC6445400D49AE2 /* SceneDelegate.swift */; };
 		B8590AF42CC6445800D49AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8590AF32CC6445800D49AE2 /* Assets.xcassets */; };
@@ -62,7 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3B5242EB2CF6C56C006596E2 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		B843E46C2CF74EAB006AD05A /* Config.example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.example.swift; sourceTree = "<group>"; };
 		B8590AE72CC6445400D49AE2 /* PassioQuickStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassioQuickStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8590AEA2CC6445400D49AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8590AEC2CC6445400D49AE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		B8590AE92CC6445400D49AE2 /* PassioQuickStart */ = {
 			isa = PBXGroup;
 			children = (
-				3B5242EB2CF6C56C006596E2 /* Config.swift */,
+				B843E46C2CF74EAB006AD05A /* Config.example.swift */,
 				B8C52D522CD2757900B19F45 /* Font */,
 				B8C52CF22CD2464D00B19F45 /* Utility */,
 				B8C52CEA2CD2464D00B19F45 /* Cell */,
@@ -325,10 +325,10 @@
 				B8C52CFA2CD2464D00B19F45 /* FoodNutrientsCell.swift in Sources */,
 				B8C52CFC2CD2464D00B19F45 /* ServingSizeCell.swift in Sources */,
 				B8C52D072CD2464D00B19F45 /* DropDownVC.swift in Sources */,
+				B843E46D2CF74EAB006AD05A /* Config.example.swift in Sources */,
 				B8C52D022CD2464D00B19F45 /* UITableView+Extension.swift in Sources */,
 				B8C52D032CD2464D00B19F45 /* UITextField+Extension.swift in Sources */,
 				B8C52D012CD2464D00B19F45 /* UIImageView+Extension.swift in Sources */,
-				3B5242EC2CF6C56C006596E2 /* Config.swift in Sources */,
 				B8C52CF82CD2464D00B19F45 /* FoodListCell.swift in Sources */,
 				B8C52D142CD248E100B19F45 /* Constants.swift in Sources */,
 			);
