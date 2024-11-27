@@ -9,8 +9,6 @@ import UIKit
 import PassioNutritionAISDK
 import AVFoundation
 
-let PASSIO_DEV_KEY = "YOUR_PASSIO_KEY"
-
 class ImageSelectionVC: UIViewController
 {
     @IBOutlet weak var statusView: UIView!
@@ -21,7 +19,7 @@ class ImageSelectionVC: UIViewController
     @IBOutlet weak var gallaryButton: UIButton!
 
     private let passioSDK = PassioNutritionAI.shared
-    private var passioConfig = PassioConfiguration(key: PASSIO_DEV_KEY)
+    private var passioConfig = PassioConfiguration(key: Config.PASSIO_KEY)
     
     // Capure photo
     var captureSession: AVCaptureSession!
