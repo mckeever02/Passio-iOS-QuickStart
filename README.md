@@ -145,15 +145,12 @@ Here's how to initialize the PassioSDK:
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Support
 
-- [Documentation](https://docs.passiolife.com)
-- [API Reference](https://api.passiolife.com)
-- [Support Portal](https://support.passiolife.com)
+- [SDK Documentation](https://passio.gitbook.io/nutrition-ai)
+- [Nutrition AI Hub](https://passio.gitbook.io/nutrition-ai-hub)
+- [Support Email](admin@passiolife.com)
 
 ## About Passio
 
