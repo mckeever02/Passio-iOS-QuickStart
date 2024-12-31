@@ -1,6 +1,6 @@
 # PassioQuickStart iOS Demo
 
-Welcome to Passio Quick Start iOS demo application. It is designed to showcase the capabilities of the PassioNutritionAI SDK for iOS - featuring food recognition, detailed nutritional analysis, and portion size estimation.
+Welcome to Passio Quick Start iOS demo application. It is designed to showcase the capabilities of the PassioNutritionAI SDK for iOS - featuring food recognition, detailed nutritional analysis, and portion size estimation. The codebase in this repository shows a clean UIKit implementation that can be partially or fully adopted by developers to integrate PassioNutritionAI SDK into their applications.
 
 ## Features
 
