@@ -139,13 +139,6 @@ Here's how to initialize the PassioSDK:
   let protein = foodItem.nutrientsReference().protein()?.value
   ```
 
-
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-
 ## Support
 
 - [SDK Documentation](https://passio.gitbook.io/nutrition-ai)
