@@ -1,97 +1,85 @@
-//
-//  DonutChartView.swift
-//  PassioQuickStart
-//
-//  Created by Pratik on 29/10/24.
-//
+import SwiftUI
 
-import UIKit
-
-class DonutChartView: UIView {
+struct DonutChartView: View {
+    var segments: [NutrientSegment]
+    var centerText: String
+    var lineWidth: CGFloat = 40
     
-    var datasource: [ChartDatasource] = []
-    
-    struct ChartDatasource {
-        var color: UIColor
-        var percent: Double
-    }
-    
-    private var radius: CGFloat { (bounds.height - lineWidth) / 2 }
-    private let baseLayer = CAShapeLayer()
-    private var progressLayers: [CALayer] = []
-    
-    @IBInspectable var lineWidth: CGFloat = 10 {
-        didSet {
-            self.baseLayer.lineWidth = lineWidth
-        }
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        baseLayer.fillColor = UIColor.clear.cgColor
-        baseLayer.strokeColor = UIColor.clear.cgColor
-        baseLayer.lineCap = .round
-        baseLayer.strokeEnd = 1.0
-        layer.addSublayer(baseLayer)
-        self.backgroundColor = .clear
-    }
-    
-    func updateData(data: [ChartDatasource]) {
-        
-        let fraction = 0.23 
-        progressLayers.forEach { $0.removeFromSuperlayer() }
-        let padding = CGFloat(data.filter({$0.percent > 0}).count) * fraction
-        let totalRotationAngle = (CGFloat.pi * 2) - padding
-        var startAngle = CGFloat.zero
-        
-        let total = data.reduce(0, {$0 + $1.percent})
-        if total == 0 { return }
-        
-        for obj in data {
-            if obj.percent > 0 {
-                let layer = CAShapeLayer()
-                let progressAngle = obj.percent / 100 * totalRotationAngle
-                
-                let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
-                let path = UIBezierPath(arcCenter: center,
-                                        radius: radius,
-                                        startAngle: startAngle,
-                                        endAngle: startAngle + progressAngle,
-                                        clockwise: true)
-                layer.path = path.cgPath
-                layer.strokeColor = obj.color.cgColor
-                layer.fillColor = UIColor.clear.cgColor
-                layer.lineWidth = self.lineWidth
-                layer.lineCap = .round
-                layer.strokeEnd = 1
-                
-                self.progressLayers.append(layer)
-                self.layer.addSublayer(layer)
-                
-                startAngle += progressAngle + fraction
+    var body: some View {
+        ZStack {
+            ForEach(segments) { segment in
+                DonutSegment(
+                    startAngle: segment.startAngle,
+                    endAngle: segment.endAngle,
+                    color: segment.color,
+                    lineWidth: lineWidth
+                )
             }
+            
+            Text(centerText)
+                .font(.system(size: 16, weight: .bold))
+                .foregroundColor(.primary)
         }
-    }
-    
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-        
-        baseLayer.frame = bounds
-        let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
-        let basePath = UIBezierPath(arcCenter: center,
-                                    radius: radius,
-                                    startAngle: .initialAngle,
-                                    endAngle: .endAngle(progress: 1),
-                                    clockwise: true)
-        baseLayer.path = basePath.cgPath
+        .aspectRatio(1, contentMode: .fit)
+        .padding()
     }
 }
 
-private extension CGFloat {
+struct DonutSegment: View {
+    var startAngle: Angle
+    var endAngle: Angle
+    var color: Color
+    var lineWidth: CGFloat
     
-    static var initialAngle: CGFloat = -(.pi / 2)
-    static func endAngle(progress: CGFloat) -> CGFloat {
-        .pi * 2 * progress + .initialAngle
+    var body: some View {
+        Circle()
+            .trim(from: startAngle.degrees / 360, to: endAngle.degrees / 360)
+            .stroke(color, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
+            .rotationEffect(Angle(degrees: -90))
     }
 }
+
+struct NutrientSegment: Identifiable {
+    var id = UUID()
+    var value: Double
+    var startAngle: Angle
+    var endAngle: Angle
+    var color: Color
+    
+    init(value: Double, startAngle: Double, endAngle: Double, color: Color) {
+        self.value = value
+        self.startAngle = Angle(degrees: startAngle)
+        self.endAngle = Angle(degrees: endAngle)
+        self.color = color
+    }
+}
+
+extension DonutChartView {
+    static func createNutrientSegments(protein: Double, carbs: Double, fat: Double) -> [NutrientSegment] {
+        let total = protein + carbs + fat
+        
+        // If total is 0, create equal segments
+        if total == 0 {
+            return [
+                NutrientSegment(value: 1, startAngle: 0, endAngle: 120, color: .blue),
+                NutrientSegment(value: 1, startAngle: 120, endAngle: 240, color: .green),
+                NutrientSegment(value: 1, startAngle: 240, endAngle: 360, color: .red)
+            ]
+        }
+        
+        // Calculate angles based on proportions
+        let proteinProportion = protein / total
+        let carbsProportion = carbs / total
+        let fatProportion = fat / total
+        
+        let proteinAngle = 360 * proteinProportion
+        let carbsAngle = 360 * carbsProportion
+        let fatAngle = 360 * fatProportion
+        
+        return [
+            NutrientSegment(value: protein, startAngle: 0, endAngle: proteinAngle, color: .blue),
+            NutrientSegment(value: carbs, startAngle: proteinAngle, endAngle: proteinAngle + carbsAngle, color: .green),
+            NutrientSegment(value: fat, startAngle: proteinAngle + carbsAngle, endAngle: 360, color: .red)
+        ]
+    }
+} 

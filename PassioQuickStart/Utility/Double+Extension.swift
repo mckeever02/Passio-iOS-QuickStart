@@ -1,34 +1,29 @@
-//
-//  Double+Extension.swift
-//  PassioQuickStart
-//
-//  Created by Pratik on 23/10/24.
-//
-
 import Foundation
 
 extension Double {
     
-    func roundUpto(_ max: Int) -> String {
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = max
-        formatter.minimumFractionDigits = 0
-        guard let formattedString = formatter.string(for: self) else {
-            return ""
-        }
-        return formattedString
+    func rounded(toPlaces places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
     
-    var noDigit: String {
-        return roundUpto(0)
+    func asString(withDecimalPlaces places: Int = 1) -> String {
+        return String(format: "%.\(places)f", self)
     }
-    var oneDigit: String {
-        return roundUpto(1)
+    
+    func asCaloriesString() -> String {
+        return "\(Int(self.rounded())) kcal"
     }
-    var twoDigits: String {
-        return roundUpto(2)
+    
+    func asGramsString() -> String {
+        return "\(self.rounded(toPlaces: 1).asString())g"
     }
-    var threeDigits: String {
-        return roundUpto(3)
+    
+    func asMilligramsString() -> String {
+        return "\(self.rounded(toPlaces: 1).asString())mg"
     }
-}
+    
+    func asPercentageString() -> String {
+        return "\(Int(self * 100))%"
+    }
+} 

@@ -1,36 +1,39 @@
-//
-//  Constants.swift
-//  PassioQuickStart
-//
-//  Created by Pratik on 30/10/24.
-//
+import SwiftUI
 
-import Foundation
-
-public struct UnitsTexts {
-    public static let cGrams = "Grams"
-    public static let grams = "grams"
-    public static let gram = "gram"
-    public static let g = "g"
-    public static let mg = "mg"
-    public static let mcg = "μg"
-    public static let iu = "IU"
-    public static let cal = "cal"
-    public static let ml = "ml"
-    public static let serving = "Serving"
-    public static let piece = "Piece"
-    public static let cup = "Cup"
-    public static let oz = "Oz"
-    public static let small = "Small"
-    public static let medium = "Medium"
-    public static let large = "Large"
-    public static let handful = "Handful"
-    public static let scoop = "Scoop"
-    public static let tbsp = "Tbsp"
-    public static let tsp = "Tsp"
-    public static let slice = "Slice"
-    public static let can = "Can"
-    public static let bottle = "Bottle"
-    public static let bar = "Bar"
-    public static let packet = "Packet"
-}
+struct AppConstants {
+    // Colors
+    struct Colors {
+        static let primaryColor = Color.blue
+        static let secondaryColor = Color.green
+        static let accentColor = Color.orange
+        static let backgroundColor = Color(.systemBackground)
+        static let textColor = Color.primary
+        static let secondaryTextColor = Color.secondary
+        
+        // Nutrition colors
+        static let proteinColor = Color.blue
+        static let carbsColor = Color.green
+        static let fatColor = Color.red
+    }
+    
+    // Fonts
+    struct Fonts {
+        static let titleFont = Font.title
+        static let headlineFont = Font.headline
+        static let bodyFont = Font.body
+        static let captionFont = Font.caption
+    }
+    
+    // Layout
+    struct Layout {
+        static let standardPadding: CGFloat = 16
+        static let smallPadding: CGFloat = 8
+        static let cornerRadius: CGFloat = 10
+    }
+    
+    // Animation
+    struct Animation {
+        static let standardDuration: Double = 0.3
+        static let standardCurve = SwiftUI.Animation.easeInOut
+    }
+} 

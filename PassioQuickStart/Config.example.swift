@@ -1,3 +1,3 @@
 struct Config {
-    static let PASSIO_KEY = "YOUR_PASSIO_KEY_HERE"
-} 
+    static let PASSIO_KEY = "hOxVi3G4s0bCs0QC0DvUranOf2dohflDAWJvI0LT"
+}

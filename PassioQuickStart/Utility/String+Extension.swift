@@ -1,14 +1,12 @@
-//
-//  String+Extension.swift
-//  PassioQuickStart
-//
-//  Created by Pratik on 30/10/24.
-//
-
 import Foundation
+import SwiftUI
 
 extension String {
-    func capitalizingFirst() -> String {
+    func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
     }
-}
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+} 
